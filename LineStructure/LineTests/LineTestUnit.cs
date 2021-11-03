@@ -35,8 +35,8 @@ namespace LineTests
 
             var consoleOut = new[]
             {
-                "Структура Line, var A = 1,73205, var B = 1,2",
-                "Структура Line, var A = -3, var B = -5",
+                "РЎС‚СЂСѓРєС‚СѓСЂР° Line, var A = 1,73205, var B = 1,2",
+                "РЎС‚СЂСѓРєС‚СѓСЂР° Line, var A = -3, var B = -5",
             };
 
             TextWriter oldOut = Console.Out;

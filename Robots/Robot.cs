@@ -22,16 +22,20 @@ namespace Robots
             for (int i = 0; i < steps; i++)
             {
                 object command;
-                if(ai is ShooterAI)
+                if (ai is ShooterAI)
                     command = (ai as ShooterAI).GetCommand();
+                else if (ai is GuardianAI)
+                    command = (ai as GuardianAI).GetCommand();
                 else
                     command = (ai as BuilderAI).GetCommand();
 
                 if (command == null)
                     break;
 
-                if(device is Mover)
+                if (device is Mover)
                     yield return (device as Mover).ExecuteCommand(command);
+                else if (device is GuardianMover)
+                    yield return (device as GuardianMover).ExecuteCommand(command);
                 else
                     yield return (device as ShooterMover).ExecuteCommand(command);
 

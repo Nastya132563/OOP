@@ -39,13 +39,13 @@ namespace RobotsUnitTests
             CollectionAssert.AreEqual(dueResult, result);
         }
 
-        //[TestMethod]
-        //public void BeCorrectForGuardian()
-        //{
-        //    var robot = Robot.Create<IGuardianMoveCommand>(new GuardianAI(), new GuardianMover());
-        //    var result = robot.Start(5).ToList();
-        //    var dueResult = Enumerable.Range(1, 5).Select(z => $"MOV {z * 0.5}, {z * 0.5}, GUARD {(z % 2 == 0 ? "YES" : "NO")}").ToList();
-        //    CollectionAssert.AreEqual(dueResult, result);
-        //}
+        [TestMethod]
+        public void BeCorrectForGuardian()
+        {
+            var robot = Robot.Create<IGuardianMoveCommand>(new GuardianAI(), new GuardianMover());
+            var result = robot.Start(5).ToList();
+            var dueResult = Enumerable.Range(1, 5).Select(z => $"MOV {z * 0.5}, {z * 0.5}, GUARD {(z % 2 == 0 ? "YES" : "NO")}").ToList();
+            CollectionAssert.AreEqual(dueResult, result);
+        }
     }
 }
